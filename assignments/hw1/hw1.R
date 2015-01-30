@@ -44,7 +44,7 @@ seq(2, 200, 2)
 
 # Create the variable
 # << z >> : a vector of length 20 with character entries, "hw1", "hw2", ..., "hw20"
-
+paste("hw1", "hw2", "hw3", sep = ",")
 
 # Create the variable
 # << m >> : a vector of length 100 with entries from a standard normal distribution
@@ -82,17 +82,17 @@ load("family.rda")
 
 # Create a new data frame 
 # << family.men >> : a data frame that is a subset of family, with only the men
-family[family$gender == "m"]
+family[family$gender == "m",]
 
 
 # Create a new data frame 
 # << family.young >> : a data frame, subset of family, with only people *under* 40
-family[family$age < 40]
+family[family$age < 40,]
 
 
 # Create a new data frame 
 # << family.30y68i >> : a data frame, subset of family, with only people *over* 30, *shorter* than 68 in
-family[family$age > 30]
+family[family$age > 30,]
 
 # Formula for BMI : BMI = (weight in lbs) / (height in in)^2 * 703
 # Note: the dataframe has weight in lbs and height in in as required.
