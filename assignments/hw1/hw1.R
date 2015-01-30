@@ -44,7 +44,7 @@ seq(2, 200, 2)
 
 # Create the variable
 # << z >> : a vector of length 20 with character entries, "hw1", "hw2", ..., "hw20"
-?paste
+
 
 # Create the variable
 # << m >> : a vector of length 100 with entries from a standard normal distribution
@@ -98,11 +98,13 @@ family[family$age > 30]
 # Note: the dataframe has weight in lbs and height in in as required.
 # Create a new variable 
 # << bmi >> : a vector with the BMI of each family member 
-
+BMI = (family$weight)/(family$height)
+BMI
 
 # Create a new data frame
 # << family2 >> : family with an added column of BMI, with column name bmi
-
+BMI = transform(family, BMI = (family$weight)/(family$height))
+BMI
 
 
 ##################################################################################
