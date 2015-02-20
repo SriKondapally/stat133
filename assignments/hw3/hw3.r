@@ -124,7 +124,7 @@ qplot(new_year, wr1500m, geom="step", direction = "vh")
 # Hint: which geom_* function adds a line segment?
 # Hint: look at xlim() and theme().
 
-wr_1998 <- xlim(xmin(wr$1500m))
+wr_1998 <- xlim(wr1500m$1998)
 
 Your ggplot command:
 p <- qplot(new_year, wr_1998, geom = "step", direction = "vh")
