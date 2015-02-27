@@ -75,11 +75,24 @@ Matrix = mapply(cbind, List[[i]], List[[j]])
 
 # Put your code here
 recipeConversion <- function(recipe){
-  recipe.metric=()
-  return (recpie.metric)
-  cups=236.6ml
-  oz=28.3gr
-  if{}
+  if(data$unit=="cup"||data$unit=="cups"||data$unit=="oz"){
+    for(data$unit=="cup"||data$unit=="cups"){
+      ml<- 236.6*data$amount
+    }
+    for(data$unit=="oz"){
+      grams<- 28.3*data$amount
+    }
+  if(colnames(data)!="amount"||colnames(data)!="unit"||colnames(data)!="ingredient"){
+    return "Error"
+    }
+  }
+
+
+
+
+
+  
+
 
 }
 
@@ -115,13 +128,7 @@ bootstrapVarEst <- function(x, B){
     variance <- var(result[x])    
   
   }
-  resamples <- lapply(1:B, function(i) sample(x, replace=T))
-  r.mean <- sapply(resamples, mean)
-  var <- var(r.median)
-  list(var=var, resamples=resamples, medians=r.mean)   
-  
     
-
 }
 
 #### Function #4b
@@ -168,12 +175,11 @@ samplingVarEst <- function(  ){
   if(type ="bootstrap"){
     return bootstrapVarEst
   }
-  if(type = "jackknife"){
+  else{
     return jackknifeVarEst
   }
-  else 
-    return FALSE 
-
+  
+  
 }
 
 
