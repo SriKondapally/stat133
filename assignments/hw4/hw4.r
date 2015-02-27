@@ -14,8 +14,9 @@
 #   element of <data.list>
 
 listLengths <- function(data.list) {
-
-    # your code here
+  
+  element.lengths=(length(data.list))
+    return (element.lengths)
 
 }
 
@@ -30,8 +31,18 @@ listLengths <- function(data.list) {
 # <x.powers> : A matrix of size [n x k] where the first column is x, the second column x^2, the third column x^4, etc.
 #              the column names should be : "x", "x^2", "x^3" etc.
 
-powers <- function(x, k){
 
+powers <- function(x, k){
+List <- list()
+  for(i in  1:n){
+    naturals <- i
+    List[[i]] <- naturals
+    }
+    for(j in 1:k){
+      exp <- pow(x,j)
+      List[[j]] <- exp 
+    }
+Matrix = mapply(cbind, List[[i]], List[[j]])
 }
 
  
@@ -64,6 +75,11 @@ powers <- function(x, k){
 
 # Put your code here
 recipeConversion <- function(recipe){
+  recipe.metric=()
+  return (recpie.metric)
+  cups=236.6ml
+  oz=28.3gr
+  if{}
 
 }
 
@@ -90,6 +106,21 @@ recipeConversion <- function(recipe){
 # -- The bootstrap variance is the sample variance of mu_1, mu_2, ..., mu_B
 
 bootstrapVarEst <- function(x, B){
+  n = length(rnorm(1000))
+  B = 5000
+  result = rep(NA, B)
+  for (x in 1:B) {
+    boot.sample <- sample(n, replace = TRUE)
+    result[x] <- mean([boot.sample])
+    variance <- var(result[x])    
+  
+  }
+  resamples <- lapply(1:B, function(i) sample(x, replace=T))
+  r.mean <- sapply(resamples, mean)
+  var <- var(r.median)
+  list(var=var, resamples=resamples, medians=r.mean)   
+  
+    
 
 }
 
@@ -112,7 +143,13 @@ bootstrapVarEst <- function(x, B){
 # -- The jackknife variance is the sample variance of mu_1, mu_2, ..., mu_n
 
 jackknifeVarEst <- fuction(x){
-
+  for (i in 1:n) {
+    #in i-th replicate omit all samples with x[i]
+    keep <- (1:n)[apply(indices, MARGIN = 1,
+                        FUN = function(x) {!any(x == i)})]
+    mean.jack[i] <- mean(theta.b[keep])
+    variance <- var(mean.jack[i])
+  }
 }
 
 #### Function #4c
@@ -128,6 +165,14 @@ jackknifeVarEst <- fuction(x){
 # Note: this function calls the previous two functions.
 
 samplingVarEst <- function(  ){
+  if(type ="bootstrap"){
+    return bootstrapVarEst
+  }
+  if(type = "jackknife"){
+    return jackknifeVarEst
+  }
+  else 
+    return FALSE 
 
 }
 
