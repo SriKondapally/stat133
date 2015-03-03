@@ -1,6 +1,5 @@
-name = "Sriharsha Kondapally"
-SID = "24598626"
-email = "hensels@berkeley.edu"
-github_name = "SriKondapally"
-status = "enrolled
-"
+name = "yourName"
+SID = "yourSID"
+email = "email@berkeley.edu"
+github_name = "github_name"
+status = "enrolled/audit/concurrent"
