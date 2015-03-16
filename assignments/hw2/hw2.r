@@ -51,6 +51,7 @@
 # the hw3 directory in the file WR1500MeterMen.rda.
 
 # load the data
+load("WR1500MeterMen.rda")
 
 # The name of the object loaded is wr1500m
 # The time (in the column "times") in these data are recorded in seconds, 
@@ -60,16 +61,20 @@
 # Q1a. How many world records does this data frame contain?
 
 # n.wr <- your code here
+n.wr = length(wr1500m$athlete)
 
 # Q1b. Use R commands to find out who currently holds the world
 # record in the men's 1500 meter.
  
 # wr.name <- your code here
+wr.name = which.min(wr1500m$times)
 
 
 # Let's look at the relationship between date and time.
 # Q1c. What type of variable (numeric (continuous or discrete), nominal ordinal)
 # are year and times? (no need to save the output, just look at it)
+year = discrete 
+time = continuous
 
 
 # When we are examining a variable to see how it changes in time,
@@ -82,9 +87,10 @@
 # But do add 180 to the times so that they are accurate measurements in seconds,
 # store that in a new variable and add to the data frame.
 
-# times_sec <- your code here
-# wr1500m <- your code here
-# plot( your code here )
+t = wr1500m$times
+times_sec = t + 180
+wr1500m = wr1500m$year
+plot(wr1500m, times_sec, type = "s")
 
 
 
@@ -97,9 +103,11 @@
 # Add new_year to the dataframe.
 
 # your code here
-# new_year <- your code here
-# wr1500m <- your code here
-# plot( your code here )
+month = wr1500m$month
+month1 <- month[is.na(month)] = 0.5
+new_year <- wr1500m$year + ((wr1500m$month1)/12)
+wr1500m <- wr1500m$times + 180
+plot(new_year, wr1500m, "s")
 
 
 # Q3. The current world record was set in 1998. If we want to
@@ -110,9 +118,9 @@
 # so that 2014 is included in the x-axis scale;
 # then use the lines() function to add the additional segment.
 
-# wr_1998 <- your code here
-# plot( your code here )
-# lines( your code here )
+wr_1998 <- 
+plot()
+lines( your code here )
 
 
 # Q4. There are two times where the record stood for several

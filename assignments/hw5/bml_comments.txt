@@ -1,0 +1,12 @@
+In this simulation, we investigated traffic behavior using the BML model. The model simulates traffic flow by using a grid and cars going east and north, represented by red and blue, respectively. The goal of the model is to determine at what densities (denoted p) traffic jams and free flow occur. After implementing this for a variety of simulations for varying densities, grid sizes, and grid shapes, we were able to define a few properties of traffic behavior in the BML model. 
+To investigate the effects of density on traffic flow, we began by conducting simulations for varying densities on a 100 x 100 grid. We typically ran each experiment out to 3,000 steps, with the exception of going up to 10,000 steps to investigate mixed traffic flow. Images corresponding to these simulations are given below:
+ 
+
+
+
+Fig. 1 corresponds to free flowing traffic at a density of 0.15, whose end-state was determined by step 891. With this configuration, free flow occurred in all 20 trials run.
+Fig. 2 corresponds to mixed traffic at a density of 0.35, up to step 10,000. Mixed traffic occurred in all 8 trials run.
+Fig. 3 corresponds to complete gridlock at density 0.5, which occurred on the 262nd step. Complete gridlock occurred in all 20 trials run.
+	
+
+We determined there was free flow if all cars moved for the number of time steps equal the lowest common multiple between the two grid dimensions. For example, in a 5 x 3 grid, if all the cars move for 15 time steps, then it is ensured that the grid state after the 15th step is identical to the original grid state. Therefore, the grid will cycle in an infinite free flow loop. To determine gridlock, there had to be one simulation step in which no cars moved. 
