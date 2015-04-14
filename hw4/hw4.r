@@ -74,18 +74,19 @@ Matrix = mapply(cbind, List[[i]], List[[j]])
 # function should stop and print out an error message
 
 # Put your code here
+# Sorry your code here doesn't work --Andy
 recipeConversion <- function(recipe){
-  if(data$unit=="cup"||data$unit=="cups"||data$unit=="oz"){
-    for(data$unit=="cup"||data$unit=="cups"){
-      ml<- 236.6*data$amount
-    }
-    for(data$unit=="oz"){
-      grams<- 28.3*data$amount
-    }
-  if(colnames(data)!="amount"||colnames(data)!="unit"||colnames(data)!="ingredient"){
-    return "Error"
-    }
-  }
+  #if(data$unit=="cup"||data$unit=="cups"||data$unit=="oz"){
+  #  for(data$unit=="cup"||data$unit=="cups"){
+  #    ml<- 236.6*data$amount
+  #  }
+  #  for(data$unit=="oz"){
+  #    grams<- 28.3*data$amount
+  #  }
+  #if(colnames(data)!="amount"||colnames(data)!="unit"||colnames(data)!="ingredient"){
+  #  return "Error"
+  #  }
+  #}
 
 
 
@@ -124,7 +125,7 @@ bootstrapVarEst <- function(x, B){
   result = rep(NA, B)
   for (x in 1:B) {
     boot.sample <- sample(n, replace = TRUE)
-    result[x] <- mean([boot.sample])
+    result[x] <- mean(boot.sample) # Wrong here, was with a squre bracket--Andy
     variance <- var(result[x])    
   
   }
@@ -149,7 +150,7 @@ bootstrapVarEst <- function(x, B){
 #     for this reduced sample calculate the sample mean (get mu_1, mu_2, ..., mu_n)
 # -- The jackknife variance is the sample variance of mu_1, mu_2, ..., mu_n
 
-jackknifeVarEst <- fuction(x){
+jackknifeVarEst <- function(x){
   for (i in 1:n) {
     #in i-th replicate omit all samples with x[i]
     keep <- (1:n)[apply(indices, MARGIN = 1,
@@ -170,14 +171,14 @@ jackknifeVarEst <- fuction(x){
 # <sampling.sigma.est> : The bootstrap estimate if type="bootstrap" and the jackknife estimate if type="jackknife"
 
 # Note: this function calls the previous two functions.
-
+# This Doesn't work
 samplingVarEst <- function(  ){
-  if(type ="bootstrap"){
-    return bootstrapVarEst
-  }
-  else{
-    return jackknifeVarEst
-  }
+  #if(type ="bootstrap"){
+  #  return bootstrapVarEst
+  #}
+  #else{
+  #  return jackknifeVarEst
+  #}
   
   
 }
