@@ -52,9 +52,17 @@ all.equal(numDigits("abcdefg"), 0)
 # and return
 #   <theirchvec>: The same character vector with the required substitutions.
 hisToTheir <- function(chvec){
-  return(gsub('him','them',chvec))
+him <- (gsub('him','them',chvec))
+he <- (gsub('he','they',chvec))
+his <-(gsub('his','their',chvec))
+chvec <- c()
 }
   
+hisToTheir <- function(chvec){
+  himtothem <- (gsub('him','them',chvec))
+  hetothey <- (gsub('he','they',chvec))
+  histotheir <-(gsub('his','their',chvec))
+}
 
 #A test case
 all.equal(
@@ -78,6 +86,9 @@ all.equal("himher when to the store with thimthem")
 # For example mostCommonLetter("aabbccccdddd") should return 
 # [1] "c" "d"
 mostCommonLetter <- function(chvec){
-  
+  chvec <- tolower(chvec)
+  splitted(unlist(strap))(chvec(character(0)))
+  mostcommon <- temp(sapply)function(unlisted, x)
+  return mostcommon
 }
   
