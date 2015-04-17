@@ -4,29 +4,29 @@
 # calculate the mean and the maximum of pop (population) in the dataset. Store these as the
 # variables <mean.pop> and <max.pop> respectively.
 
-# mean.pop <- your code here
-# max.pop <- your code here
+mean.pop <- mean(SO2012Ctry$pop)
+max.pop <- max(SO2012Ctry$pop)
 
 # For each country in the dataset, calculate the number of female athletes (Female) divided
 # by the total number of athletes (Female + Male). Store this as the variable
 # <female.prop>. Note that this should be a numeric vector with length equal to
 # the number of observations in the dataset.
 
-# female.prop <- your code here
+female.prop <- SO2012Ctry$Female/(SO2012$Male + SO2012Ctry$Female)
 
 # Create the following two subsets of the dataset and store them as variables with the
 # indicated names:
 # 1) Countries with 0 silver medals: <subset.nosilver>
 # 2) Countries with more than or exactly 3 silver medals: <subset.threesilver>
 
-# subset.nosilver <- your code here
-# subset.threesilver <- your code here
+subset.nosilver <- SO2012Ctry[SO2012Ctry$Silver==0 ,]
+subset.threesilver <- SO2012Ctry[SO2012$Silver >=3 ,]
 
 # For each of your subsets, create a vector giving the population size. Store
 # these as variables <subset.nosilver.pop> and <subset.threesilver.pop>.
 
-# subset.nosilver.pop <- your code here
-# subset.threesilver.pop <- your code here
+subset.nosilver <- SO2012Ctry[SO2012Ctry$Country for subset.threesilver,]pop
+subset.threesilver <- SO2012Ctry[SO2012$Country for subset.nosilver,]pop
 
 
 # Implement the function meanpopByGDPPP. Your function should take the following
@@ -41,8 +41,9 @@
 # whose values in <GDPPP> are strictly less that <GDPPP.cutoff>.
 
 meanpopByGDPPP <- function(GDPPP.cutoff, GDPPP, pop){
- # your code here
+  mean(pop(GDPPP)) < GDPPP.cutoff()
 }
+
 
 # Please create a plot of the proportion of female athletes (y-axis) 
 # against the total number of athletes (x-axis). Your plot should include the following 
@@ -51,3 +52,10 @@ meanpopByGDPPP <- function(GDPPP.cutoff, GDPPP, pop){
 # 2) axis labels: "Proportion of female athletes" and "Total # athletes"
 # 3) plotting character set to 19
 # 4) a green horizontal line at female proportion of 0.50.
+plot(SO2012Ctry$Female/(SO2012Ctry$Female + SO2012Ctry$Male), SO2012Ctry$Female + SOCtry$Male, 
+     main = "female athletes vs Total # athletes"
+     xlab = "Proportion of female athletes"
+     ylab= "Total # athletes", 
+     pch = 19
+     )
+abline(0.5,0)
