@@ -61,7 +61,7 @@ x <- 3*(1:1200)
 # y[[2]] is 2, 4, 6, ..., 1000
 # y[[3]] is 3, 6, 9, ..., 999
 
-y <- lapply(1:10, function())
+#y <- lapply(1:10, function())
 
 
 # [1 pt]
@@ -70,14 +70,14 @@ y <- lapply(1:10, function())
 #  a probability 0.3 of being TRUE and 0.7 of being FALSE
 # Hint: you can e.g. use [sample()], you will need to set all 4 arguments
 set.seed(42)
-z <- sample((TRUE, FALSE), 1:5000, replace = TRUE, prob = (0,3, 0.7))
+#z <- sample((TRUE, FALSE), 1:5000, replace = TRUE, prob = (0,3, 0.7))#andy
   
   
 # [1 pt]
 # Create [v], a numeric vector with the results of 100 rolls of a dice,
 # i.e. each element is one of the numbers 1 through 6, with equal probability.
   set.seed(31415)
-v <- sample(1:6, 100, replace= FALSE)
+#v <- sample(1:6, 100, replace= FALSE)
 
 # [1 pt]
 # Create [w], a character vector of length 26 with entries:
@@ -123,7 +123,7 @@ cw3 <- ChickWeight[ChickWeight$weight== mean(ChickWeight$Weight) & ChickWeight$T
 
 # [1 pt]
 # Create [cw4] a random subset of 200 ChickWeight observations (any 200)
-cw4 <- ChickWeight(sample(200))
+#cw4 <- ChickWeight(sample(200))
   
 
 # for the next two tasks you will use the data frame infants (size 1236x15)
@@ -134,21 +134,21 @@ load("KaiserBabies.rda")
 # Create a table [t1] of the smoking history of the mothers using the variables
 # [smoke] for the rows of the table and  [number] for the columns.
 # 
-t1 <- table(infants$smoke, infant$number)
+t1 <- table(infants$smoke, infants$number)#andy
 
 
 # [1 pt] 
 # Now create a table [t2] which is the same table as before except restricted
 # to mothers with College education (use [ed])
 # 
-t2 <- table(infants$smoke[infants$ed== "College",], infants$number[infants$ed== "College",])
+t2 <- table(infants$smoke[infants$ed== "College"], infants$number[infants$ed== "College"])#andy
 
 
 # [2 pts] 
 # Calculate [bdiff], the difference in average birthweight [column bwt] between babies born to mothers
 # that are 35 years or older and mothers that are under 35 years of age [use column age for mothers age]
 #  
-bdiff <- mean(infants$bwt[infants$age > 35,]) - mean(infants$bwt[infants$age < 35,])
+bdiff <- mean(infants$bwt[infants$age > 35]) - mean(infants$bwt[infants$age < 35])#andy
 
 #################################################################
 #### PART II : Plotting [20 pts]
@@ -234,14 +234,14 @@ max.rain <- sapply(rain, max)
 # __maximum absolute difference__ in rainfall on two consecutive days
 # Hint: you can use the function [diff()] to get the difference between entry i and i+1 in a vector 
 # and the function [abs()] for absolute value
-max.diff.rain <- sapply(rain, function((item)max(abs(diff(item)))
+#max.diff.rain <- sapply(rain, function((item)max(abs(diff(item)))
 
 
 # [5 pts]
 # Create [prop.rain], a vector of length 5 where each entry is the 
 # number of rain days (i.e. rain > 0) as a function of total days
 
-prop.rain <- sapply(rain, function((item)length(prop(item > 0)/length(item)))
+#prop.rain <- sapply(rain, function((item)length(prop(item > 0)/length(item)))
   
 
 # [3 pts]
@@ -249,7 +249,7 @@ prop.rain <- sapply(rain, function((item)length(prop(item > 0)/length(item)))
 # in a separate panel (there will be one empty panel)
 # use an apply statment to the the plotting
 par(mfrow=c(2,3))
-hist(sapply(rain, function =) )
+#hist(sapply(rain, function =) )
 
 
 #################################################################
@@ -267,7 +267,7 @@ hist(sapply(rain, function =) )
 #   a vector of n normal random variables with mean=mean and sd=sd
 #   an optional plot
 
-function <- GenNorm(mean= 0, sd= 1, n= 1000, plot.hist=TRUE){
+GenNorm <-function(mean= 0, sd= 1, n= 1000, plot.hist=TRUE){
   res = rnorm(mean, sd)
   if(plot.hist){
     hist(res)
@@ -290,14 +290,14 @@ function <- GenNorm(mean= 0, sd= 1, n= 1000, plot.hist=TRUE){
 
 standardizeVar <- function(m, cols=TRUE){
   if(cols){
-    return(apply(m, 2, function(col))){
+    return(apply(m, 2, function(col){
       col = mean(col)/sd(col)
-    }
+    })) #andy
     
 } else{
-    return(apply(m,1, function(row)){
+    return(apply(m,1, function(row){
       row = mean(row)/sd(row)
-    }    
+    }))    #andy
   }
 }
 
@@ -367,7 +367,7 @@ set.seed(123456)
 #    generate a ticket for each player in turn, if they had the winning numbers 
 #    increase the counter by 1
 
-function <- NumJackpot(k, B){
+NumJackpot <- function(k, B){
   res = vector()
   for(i in 1:B){
     winning = sample(1:19, 3, replace=FALSE)
@@ -385,10 +385,10 @@ function <- NumJackpot(k, B){
 # For B = 5000 and each value of k = 10000, 50000, 100000, 500000
 # Plot a histogram of the output from NumJackpot (i.e. four histograms)
 par(mfrow= c(2,2))
-sapply((1000, 5000, 10000, 50000), function(k){
-  res = NumJackpot(k,5000)
+sapply(c(100, 500, 1000, 5000), function(k){ #andy
+  res = NumJackpot(k,50)
   hist(res, xlab= "winners", main= "# Winners in game")
-}
+})
 
 
 #################################################################
@@ -425,18 +425,18 @@ text5 <- grep("[[punct:]]", phrases)
 
 # [2 pts]
 # Create a vector [phrases2] where you have replaced the first instance of the letter "a" in each word with "@"
-phrases2 <- grep()
+#phrases2 <- grep()
 
 
 # [2 pts]
 dna <- c("AGGATGATT", "AGCCTTAGC", "AGAGAGCT", "AGTTTCGTA", "CGTGGTGC", "CTAAGTGAC", "GTGGGACC", "GGTAGAGAC", "TAGATTACC")
 # Create a vector [match1] with the index for all matches to "A*T" or "G*T"
 
-match1 <- 
+#match1 <- 
 
 # [2 pts]
 # Create a vector [dna2] where you have removed all entries whose length is not a multiple of 3
-dna2 <- 
+#dna2 <- 
 
 #################################################################
 
