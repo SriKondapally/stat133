@@ -73,8 +73,8 @@ wr.name = which.min(wr1500m$times)
 # Let's look at the relationship between date and time.
 # Q1c. What type of variable (numeric (continuous or discrete), nominal ordinal)
 # are year and times? (no need to save the output, just look at it)
-year = discrete 
-time = continuous
+# year = discrete 
+# time = continuous
 
 
 # When we are examining a variable to see how it changes in time,
@@ -89,8 +89,8 @@ time = continuous
 
 t = wr1500m$times
 times_sec = t + 180
-wr1500m = wr1500m$year
-plot(wr1500m, times_sec, type = "s")
+# wr1500m = wr1500m$year
+plot(wr1500m$year, times_sec, type = "s")
 
 
 
@@ -103,7 +103,7 @@ plot(wr1500m, times_sec, type = "s")
 # Add new_year to the dataframe.
 
 # your code here
-month = wr1500m$month
+month <- wr1500m$month
 month1 <- month[is.na(month)] = 0.5
 new_year <- wr1500m$year + ((wr1500m$month1)/12)
 wr1500m <- wr1500m$times + 180
@@ -118,7 +118,7 @@ plot(new_year, wr1500m, "s")
 # so that 2014 is included in the x-axis scale;
 # then use the lines() function to add the additional segment.
 
-wr_1998 <- 
+# wr_1998 <- 
 plot()
 lines( your code here )
 
@@ -293,7 +293,7 @@ library("RColorBrewer")
 
 #Q13. We are interested in the relationship between Sport and Sex. 
 # Examine the data frame and check which type of data each variable is.
-names(athletes)
+#names(athletes)
 ### Name : nominal
 ### Sex : nominal
 ### Sport : nominal
