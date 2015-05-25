@@ -248,7 +248,7 @@ max.rain <- sapply(rain, max)
 # Make a plot with 6 panels and plot the histogram of the rainfall for each weather station
 # in a separate panel (there will be one empty panel)
 # use an apply statment to the the plotting
-par(mfrow=c(2,3))
+#par(mfrow=c(2,3))
 #hist(sapply(rain, function =) )
 
 
