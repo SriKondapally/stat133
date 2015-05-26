@@ -1,0 +1,15 @@
+Total: 15/25
+
+Part 1:  bml_functions.R
+##!! There are many syntax errors here
+a. bml.init 1/2
+
+b. bml.step 3/5
+
+c. bml.sim 1/2
+
+Part 2: bml_simulation.R 6/6
+
+Part 3: bml_comments and bml_figures 5/10
+##!! The comments do not include actual results
+##!! and I could not get results from your code.
